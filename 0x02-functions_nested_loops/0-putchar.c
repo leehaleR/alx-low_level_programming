@@ -1,14 +1,20 @@
 #include "main.h"
 /**
- * main - Print "Holberton" followed by a new line.
- * Return: 0
+ *main - writing a program that prints Holberton followed by a new line.
+ *Return: The value 0 is returned.
  */
-int main()
+
+int main(void)
+
 {
-
-    // Get the character to be written
-    char ch = '_putchar';
-    putchar(ch);
-
-    return (0);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
 }
