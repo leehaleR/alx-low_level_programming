@@ -21,5 +21,4 @@ void positive_or_negative(int n)
 	else
 		printf("%i is zero\n", n);
 
-	
 }
