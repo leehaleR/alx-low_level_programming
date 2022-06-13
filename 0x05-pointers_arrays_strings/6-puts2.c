@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts2 - rints every other character of a string, starting with the first character
+ * puts2 - prints every other character of a string
  * @str: char type
  *
  */
@@ -9,6 +9,7 @@
 void puts2(char *str)
 {
 	int i;
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (i % 2 == 0)
