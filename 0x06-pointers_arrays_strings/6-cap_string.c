@@ -6,26 +6,62 @@
  * Return: `str`
  */
 
-char *cap_string(char *lee)
+
+
+char *cap_string(char *str)
+
 {
-	int i;
 
-	char seps[] = ",;.!?(){}\n\t\" ";
+	int i, c;
 
-	while (i = 0, lee[i] !=  '\0')
+	int lee;
+
+	char nots[] = ",;.!?(){}\n\t\" ";
+
+
+
+	for (i = 0, lee = 0; str[i] != '\0'; i++)
+
 	{
-		if (lee[i] >= 'a' && lee[i] <= 'z')
+
+		if (str[0] > 96 && str[0] < 123)
+
+			lee = 1;
+
+		for (c = 0; nots[c] != '\0'; c++)
+
 		{
-			if (i == 0)
-			{
-				lee[i] -= 32;
-			}
-			if (lee[i - 1] == 32 || lee[i - 1] == seps[i])
-			{
-				lee[i] -= 32;
-			}
+
+			if (nots[c] == str[i])
+
+				lee = 1;
+
 		}
-		i++;
+
+
+
+		if (lee)
+
+		{
+
+			if (str[i] > 96 && str[i] < 123)
+
+			{
+
+				str[i] -= 32;
+
+				lee = 0;
+
+			}
+
+			else if (str[i] > 64 && str[i] < 91)
+
+				lee = 0;
+			else if (str[i] > 47 && str[i] < 58)
+
+				lee = 0;
+		}
 	}
-	return (lee);
+
+	return (str);
 }
