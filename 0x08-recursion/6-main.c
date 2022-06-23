@@ -8,6 +8,7 @@
  */
 
 int is_prime_number(int n);
+int helper_f(int n, int i);
 
 int main(void)
 {
