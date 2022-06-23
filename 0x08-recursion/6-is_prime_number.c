@@ -1,44 +1,51 @@
 #include "main.h"
 
 /**
- * is_prime_number - a function that checks to see if n is a positive number
- * and calls the helper function
- *
- * @n: The number being compared
- *Return: helper function or 0 if n is less than 0
- */
-
-/**
- *helper_f - A function that checks if n is a prime number.
- *@n: Takes the income number and compares it
- *@i: The integer that we are iterating through
- *Return: The recursive function
+ * is_prime_number - determine if a number is a prime number
+ * @n: int number
+ * Return: 1 if prime, 0 otherwise
  */
 
 int is_prime_number(int n)
 {
-	if (n > 1)
-	{
-		return (helper_f(n, 2));
-	}
-	else if (n < 0)
-	{
+	if (n < 2)
 		return (0);
-	}
-	return (0);
-}
-int helper_f(int n, int i)
-{
-	if (n % i == 0 && i != (n / 2))
-	{
-		return (0);
-	}
-	else if (i >= (n / 2))
-	{
+	if (n < 4)
 		return (1);
-	}
+	return (hau(n, 2));
+}
+
+/**
+ * _sqrt - return square root of number
+ * @x: number
+ * @i: number incrementer acting as divisor
+ * Return: square root of `x`
+ */
+
+int _sqrt(int x, int i)
+{
+	int square;
+
+	square = i * i;
+	if (square >= x)
+		return (i);
 	else
-	{
-		return (helper_f(n, i + 1));
-	}
+		return (_sqrt(x, i + 1));
+}
+
+/**
+ * hau - helper function, recursive steps taken
+ * @n: number given to original function is_prime_number
+ * @d: incrementer divisor
+ * Return: 0 if not prime, 1 if prime
+ */
+
+int hau(int n, int d)
+{
+	if (n % d == 0)
+		return (0);
+	else if (_sqrt(n, 1) < d)
+		return (1);
+	else
+		return (hau(n, d + 1));
 }
