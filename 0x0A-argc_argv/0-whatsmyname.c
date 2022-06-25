@@ -3,7 +3,6 @@
 
 /**
  * main - print name of file argv c
- * @i : integer type
  * @argc : argument type
  * @argv : arguments passed to main as an array of strings
  * Return: 0
