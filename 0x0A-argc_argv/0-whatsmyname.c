@@ -11,7 +11,8 @@
 
 int main(int argc, char *argv[])
 {
-	/**If a function argument is not used
+	/**
+	 * If a function argument is not used
 	 */
 	(void) argc;
 	printf("%s\n", argv[0]);
