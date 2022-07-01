@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib>
 /**
  * array_range - create an array of integers inclusive of min and max
  * @min: min value to include
@@ -8,17 +9,17 @@
 
 int *array_range(int min, int max)
 {
-	int *p, i;
+	int i, *p;
 
 	if (min > max)
 		return (NULL);
-
-	p = malloc((max - min + 1) * sizeof(*p));
-	if (p == NULL)
-		return (NULL);
-
-	for (i = 0; min <= max; i++, min++)
+	p = malloc((max - min + 1) * sizeof(int));
+	i = 0;
+	while (min <= max)
+	{
 		p[i] = min;
-
+		min++;
+		i++;
+	}
 	return (p);
 }
