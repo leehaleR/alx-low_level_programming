@@ -9,17 +9,22 @@
 
 int *array_range(int min, int max)
 {
-	int i, *p;
+	int *block;
+	int i, j = 0;
 
 	if (min > max)
 		return (NULL);
-	p = malloc((max - min + 1) * sizeof(int));
-	i = 0;
-	while (min <= max)
+	block = malloc(sizeof(*block) * ((max - min) + 1));
+	if (block != NULL)
 	{
-		p[i] = min;
-		min++;
-		i++;
+		for (i = min; i <= max; i++)
+		{
+			block[j] = i;
+			j++;
+		}
+		return (block);
 	}
-	return (p);
+	else
+		return (NULL);
+
 }
